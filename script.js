@@ -15,6 +15,9 @@ for(let i=0;i<gridsize;i++){
          gridBoxes.style.border="solid";
          gridBoxes.style.width=`${containersize/gridsize}px`
          gridBoxes.style.height=`${containersize/gridsize}px`
+         gridBoxes.addEventListener("mouseover",()=>{
+            gridBoxes.style.backgroundColor="black"
+         })
          
         gridRow.appendChild(gridBoxes);
     }
