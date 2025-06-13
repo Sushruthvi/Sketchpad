@@ -1,6 +1,9 @@
 const gridsizeInput = document.getElementById("gridsize");
 const containersize = 610;
 const container = document.getElementById("container");
+function randomColor(){
+   return Math.floor(Math.random()*(255-0)+0);
+}
 
 
 
@@ -24,13 +27,9 @@ function create(gridsize) {
             gridBox.style.height = `${containersize / gridsize}px`;
             gridBox.style.boxSizing = "border-box";
             gridBox.style.border = "1px solid transparent"; // optional border
-            gridBox.addEventListener("mousedown", () => {
-                gridBox.style.backgroundColor = "black";
-            });
-            gridBox.addEventListener("mouseover", () => {
-        
-                    gridBox.style.backgroundColor = "black";
-                
+           
+            gridBox.addEventListener("mouseover", () => {    
+                gridBox.style.backgroundColor = `rgb(${randomColor()},${randomColor()},${randomColor()})`;            
             });
 
             gridRow.appendChild(gridBox);
@@ -46,3 +45,9 @@ gridsizeInput.addEventListener("input", () => {
         create(size);
     }
 });
+
+const resetButton=document.getElementById("reset-button");
+resetButton.addEventListener("click",()=>{
+    container.innerHTML="ENTER GRID VALUE IN THE BOX!!!";
+    create(parseInt(gridsizeInput.value))
+})

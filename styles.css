@@ -1,0 +1,14 @@
+.nav{
+    display: flex;
+    
+}
+#reset-button{
+    background-color: aqua;
+    color: black;
+    font-weight: 500;
+    font-size: medium;
+}
+
+.gridselection{
+    display: flex;
+}
